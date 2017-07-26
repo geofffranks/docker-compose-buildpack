@@ -8,5 +8,5 @@ build_dir=$1
 cat << EOF
 addons: []
 default_process_types:
-  web: docker/dockerd -p ../tmp/docker.pid && ./docker-compose up -d
+  web: docker/dockerd -H unix://../tmp/docker.sock -p ../tmp/docker.pid && ./docker-compose up -d
 EOF
